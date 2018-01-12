@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  marca: MyString
+  modelo: MyString
+  fecha_matriculacion: 2018-01-12
+  combustible: MyString
+  kms: 1
+  descripcion: MyText
+
+two:
+  marca: MyString
+  modelo: MyString
+  fecha_matriculacion: 2018-01-12
+  combustible: MyString
+  kms: 1
+  descripcion: MyText

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  subasta: one
+  fecha_puja: 2018-01-12 20:07:26
+  valor: 1.5
+
+two:
+  user: two
+  subasta: two
+  fecha_puja: 2018-01-12 20:07:26
+  valor: 1.5

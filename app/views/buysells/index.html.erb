@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Buysells</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Coche</th>
+      <th>Comprador</th>
+      <th>Vendedor</th>
+      <th>Fecha publicacion</th>
+      <th>Fecha compra</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buysells.each do |buysell| %>
+      <tr>
+        <td><%= buysell.coche %></td>
+        <td><%= buysell.comprador %></td>
+        <td><%= buysell.vendedor %></td>
+        <td><%= buysell.fecha_publicacion %></td>
+        <td><%= buysell.fecha_compra %></td>
+        <td><%= buysell.precio %></td>
+        <td><%= link_to 'Show', buysell %></td>
+        <td><%= link_to 'Edit', edit_buysell_path(buysell) %></td>
+        <td><%= link_to 'Destroy', buysell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Buysell', new_buysell_path %>

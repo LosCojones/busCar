@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coche: one
+  alquilador: one
+  alquilado: one
+  fecha_creacion_anuncio: 2018-01-12
+  fecha_fin_anuncio: 2018-01-12
+  fecha_inicio_alquiler: 2018-01-12
+  fecha_fin_alquiler: 2018-01-12
+  precio: 1.5
+
+two:
+  coche: two
+  alquilador: two
+  alquilado: two
+  fecha_creacion_anuncio: 2018-01-12
+  fecha_fin_anuncio: 2018-01-12
+  fecha_inicio_alquiler: 2018-01-12
+  fecha_fin_alquiler: 2018-01-12
+  precio: 1.5

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Coche:</strong>
+  <%= @rental.coche %>
+</p>
+
+<p>
+  <strong>Alquilador:</strong>
+  <%= @rental.alquilador %>
+</p>
+
+<p>
+  <strong>Alquilado:</strong>
+  <%= @rental.alquilado %>
+</p>
+
+<p>
+  <strong>Fecha creacion anuncio:</strong>
+  <%= @rental.fecha_creacion_anuncio %>
+</p>
+
+<p>
+  <strong>Fecha fin anuncio:</strong>
+  <%= @rental.fecha_fin_anuncio %>
+</p>
+
+<p>
+  <strong>Fecha inicio alquiler:</strong>
+  <%= @rental.fecha_inicio_alquiler %>
+</p>
+
+<p>
+  <strong>Fecha fin alquiler:</strong>
+  <%= @rental.fecha_fin_alquiler %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @rental.precio %>
+</p>
+
+<%= link_to 'Edit', edit_rental_path(@rental) %> |
+<%= link_to 'Back', rentals_path %>

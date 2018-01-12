@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rentals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Coche</th>
+      <th>Alquilador</th>
+      <th>Alquilado</th>
+      <th>Fecha creacion anuncio</th>
+      <th>Fecha fin anuncio</th>
+      <th>Fecha inicio alquiler</th>
+      <th>Fecha fin alquiler</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rentals.each do |rental| %>
+      <tr>
+        <td><%= rental.coche %></td>
+        <td><%= rental.alquilador %></td>
+        <td><%= rental.alquilado %></td>
+        <td><%= rental.fecha_creacion_anuncio %></td>
+        <td><%= rental.fecha_fin_anuncio %></td>
+        <td><%= rental.fecha_inicio_alquiler %></td>
+        <td><%= rental.fecha_fin_alquiler %></td>
+        <td><%= rental.precio %></td>
+        <td><%= link_to 'Show', rental %></td>
+        <td><%= link_to 'Edit', edit_rental_path(rental) %></td>
+        <td><%= link_to 'Destroy', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rental', new_rental_path %>

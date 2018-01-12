@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coche: one
+  comprador: one
+  vendedor: one
+  fecha_publicacion: 2018-01-12
+  fecha_limite: 2018-01-12
+  fecha_compra: 2018-01-12
+  valor_compra: 1.5
+  puja: one
+
+two:
+  coche: two
+  comprador: two
+  vendedor: two
+  fecha_publicacion: 2018-01-12
+  fecha_limite: 2018-01-12
+  fecha_compra: 2018-01-12
+  valor_compra: 1.5
+  puja: two

@@ -1,0 +1,47 @@
+<%= form_with(model: buysell, local: true) do |form| %>
+  <% if buysell.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(buysell.errors.count, "error") %> prohibited this buysell from being saved:</h2>
+
+      <ul>
+      <% buysell.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :coche_id %>
+    <%= form.text_field :coche_id, id: :buysell_coche_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comprador_id %>
+    <%= form.text_field :comprador_id, id: :buysell_comprador_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vendedor_id %>
+    <%= form.text_field :vendedor_id, id: :buysell_vendedor_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_publicacion %>
+    <%= form.date_select :fecha_publicacion, id: :buysell_fecha_publicacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_compra %>
+    <%= form.date_select :fecha_compra, id: :buysell_fecha_compra %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precio %>
+    <%= form.text_field :precio, id: :buysell_precio %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

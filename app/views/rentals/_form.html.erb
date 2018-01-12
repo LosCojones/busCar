@@ -1,0 +1,57 @@
+<%= form_with(model: rental, local: true) do |form| %>
+  <% if rental.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
+
+      <ul>
+      <% rental.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :coche_id %>
+    <%= form.text_field :coche_id, id: :rental_coche_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alquilador_id %>
+    <%= form.text_field :alquilador_id, id: :rental_alquilador_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alquilado_id %>
+    <%= form.text_field :alquilado_id, id: :rental_alquilado_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_creacion_anuncio %>
+    <%= form.date_select :fecha_creacion_anuncio, id: :rental_fecha_creacion_anuncio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_fin_anuncio %>
+    <%= form.date_select :fecha_fin_anuncio, id: :rental_fecha_fin_anuncio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_inicio_alquiler %>
+    <%= form.date_select :fecha_inicio_alquiler, id: :rental_fecha_inicio_alquiler %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_fin_alquiler %>
+    <%= form.date_select :fecha_fin_alquiler, id: :rental_fecha_fin_alquiler %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precio %>
+    <%= form.text_field :precio, id: :rental_precio %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

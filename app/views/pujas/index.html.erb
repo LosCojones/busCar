@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pujas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Subasta</th>
+      <th>Fecha puja</th>
+      <th>Valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pujas.each do |puja| %>
+      <tr>
+        <td><%= puja.user %></td>
+        <td><%= puja.subasta %></td>
+        <td><%= puja.fecha_puja %></td>
+        <td><%= puja.valor %></td>
+        <td><%= link_to 'Show', puja %></td>
+        <td><%= link_to 'Edit', edit_puja_path(puja) %></td>
+        <td><%= link_to 'Destroy', puja, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Puja', new_puja_path %>

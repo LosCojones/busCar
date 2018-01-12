@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @coch.marca %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @coch.modelo %>
+</p>
+
+<p>
+  <strong>Fecha matriculacion:</strong>
+  <%= @coch.fecha_matriculacion %>
+</p>
+
+<p>
+  <strong>Combustible:</strong>
+  <%= @coch.combustible %>
+</p>
+
+<p>
+  <strong>Kms:</strong>
+  <%= @coch.kms %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @coch.descripcion %>
+</p>
+
+<%= link_to 'Edit', edit_coch_path(@coch) %> |
+<%= link_to 'Back', coches_path %>

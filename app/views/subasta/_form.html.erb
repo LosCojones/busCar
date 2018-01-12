@@ -1,0 +1,57 @@
+<%= form_with(model: subastum, local: true) do |form| %>
+  <% if subastum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subastum.errors.count, "error") %> prohibited this subastum from being saved:</h2>
+
+      <ul>
+      <% subastum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :coche_id %>
+    <%= form.text_field :coche_id, id: :subastum_coche_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comprador_id %>
+    <%= form.text_field :comprador_id, id: :subastum_comprador_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vendedor_id %>
+    <%= form.text_field :vendedor_id, id: :subastum_vendedor_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_publicacion %>
+    <%= form.date_select :fecha_publicacion, id: :subastum_fecha_publicacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_limite %>
+    <%= form.date_select :fecha_limite, id: :subastum_fecha_limite %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_compra %>
+    <%= form.date_select :fecha_compra, id: :subastum_fecha_compra %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor_compra %>
+    <%= form.text_field :valor_compra, id: :subastum_valor_compra %>
+  </div>
+
+  <div class="field">
+    <%= form.label :puja_id %>
+    <%= form.text_field :puja_id, id: :subastum_puja_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
