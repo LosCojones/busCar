@@ -1,0 +1,5 @@
+rails g scaffold subasta coche:references comprador:references vendedor:references fecha_publicacion:date fecha_limite:date fecha_compra:date valor_compra:float puja:references
+rails g scaffold puja user:references subasta:references fecha_puja:datetime valor:float
+rails g scaffold rental coche:references alquilador:references alquilado:references fecha_creacion_anuncio:date fecha_fin_anuncio:date fecha_inicio_alquiler:date fecha_fin_alquiler:date precio:float
+rails g scaffold user name:string username:string password:string
+rails g scaffold buysell comprador:references vendedor:references car:references buy_date:datetime sell_date:datetime
