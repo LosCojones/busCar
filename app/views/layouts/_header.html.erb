@@ -1,0 +1,81 @@
+<header>
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                	<%= image_tag("logocremita.png", alt: "LOGO", width: '150')%>
+                </div>
+                <ul class="nav navbar-nav menu">
+                    <li class="active item"><a href="index.html">Inicio</a></li>
+                    <li class="item"><a href="faqs.html">FAQs</a></li>
+                    <li class="item"><a href="#">Contacto</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right partderecha">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>
+                        
+                        <button class="botderecha" style="border:transparent"
+                                onclick="document.getElementById('modalRegistro').style.display='block'">Regístrate
+                        </button>
+                    </a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+                        <button class="botderecha" style="border:transparent"
+                                onclick="document.getElementById('modalInicioSesion').style.display='block'"> Inicia
+                            sesión
+                        </button>
+                    </a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div id="modalRegistro" class="modal">
+        <form class="modal-content animate">
+            <span onclick="document.getElementById('modalRegistro').style.display='none'" class="close"
+                  title="Close Modal">&times;</span>
+            <div style="padding:5% 5%">
+                <form class="form-signin"><span class="reauth-email"> </span>
+                    <h1 class="titulo">Registro</h1>
+                    <div class="espacio"></div>
+                    <input class="form-control" type="text" required placeholder="Introduzca su nombre completo">
+                    <p></p>
+                    <input class="form-control" type="number" required placeholder="Introduzca su edad" min="0"
+                           max="100">
+                    <p></p>
+                    <input class="form-control" type="number" required placeholder="Introduzca su número de teléfono"
+                           maxlength="9">
+                    <p></p>
+                    <input class="form-control" type="email" required placeholder="Introduzca su Email">
+                    <p></p>
+                    <input class="form-control" type="password" required placeholder="Introduzca su contraseña">
+                    <p></p>
+                    <input class="form-control" type="password" required placeholder="Repita su contraseña">
+                    <p></p>
+                    <p style="text-align: center">Al registrarse, acepta los <a href="#">Términos y Condiciones de uso</a></p>
+                    <div class="botonsubmit">
+                        <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Regístrese</button>
+                    </div>
+                </form>
+            </div>
+        </form>
+    </div>
+    <div id="modalInicioSesion" class="modal">
+        <form class="modal-content animate">
+            <span onclick="document.getElementById('modalInicioSesion').style.display='none'" class="close"
+                  title="Close Modal">&times;</span>
+            <div style="padding:5% 5%">
+                <form class="form-signin"><span class="reauth-email"></span>
+                    <h1 class="titulo">Inicio de sesión</h1>
+                    <div class="espacio"></div>
+                    <input class="form-control" type="email" required placeholder="Introduzca su Email">
+                    <p></p>
+                    <input class="form-control" type="password" required placeholder="Introduzca su contraseña">
+                    <div class="checkbox">
+                        <label><input type="checkbox">Recuérdame</label>
+                    </div>
+                <div class="botonsubmit">
+                 <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Iniciar Sesión</button>
+                </div>
+                </form>
+                <a href="#">¿Ha olvidado su contraseña?</a>
+            </div>
+        </form>
+    </div>
