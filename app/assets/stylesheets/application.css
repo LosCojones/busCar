@@ -100,3 +100,13 @@ body {
 .titulo {
     width: 100%;
 }
+
+.separador {
+    border: 1px black solid;
+}
+
+.fondo {
+    background-image: url("fondo daw.png");
+    width: 100%;
+    heigth: 50%;
+}

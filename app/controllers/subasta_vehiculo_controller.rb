@@ -1,0 +1,2 @@
+class SubastaVehiculoController < ApplicationController
+end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BuysellTest < ActiveSupport::TestCase
+class SubastaVehiculoControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

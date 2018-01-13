@@ -5,7 +5,7 @@
                 	<%= image_tag("logocremita.png", alt: "LOGO", width: '150')%>
                 </div>
                 <ul class="nav navbar-nav menu">
-                    <li class="active item"><a href="index.html">Inicio</a></li>
+                    <li class="active item"><%= link_to "Inicio", {controller: 'inicio', action: 'index'}%></li>
                     <li class="item"><a href="faqs.html">FAQs</a></li>
                     <li class="item"><a href="#">Contacto</a></li>
                 </ul>

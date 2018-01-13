@@ -1,0 +1,2 @@
+class AlquilaVehiculoController < ApplicationController
+end

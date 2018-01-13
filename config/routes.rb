@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :subasta
   resources :pujas
   resources :rentals
-  resources :buysells
   resources :users
   resources :coches
+  resources :venta
+  resources :alquila_vehiculo
+  resources :subasta_vehiculo
 
   root "inicio#index"
 end
