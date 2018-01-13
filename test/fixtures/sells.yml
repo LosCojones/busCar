@@ -4,14 +4,14 @@ one:
   coche: one
   comprador: one
   vendedor: one
-  fecha_publicacion: 2018-01-12
-  fecha_compra: 2018-01-12
+  fecha_publicacion: 2018-01-13
+  fecha_compra: 2018-01-13
   precio: 1.5
 
 two:
   coche: two
   comprador: two
   vendedor: two
-  fecha_publicacion: 2018-01-12
-  fecha_compra: 2018-01-12
+  fecha_publicacion: 2018-01-13
+  fecha_compra: 2018-01-13
   precio: 1.5

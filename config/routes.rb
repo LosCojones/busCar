@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  resources :sells
   get 'inicio/index'
 
   resources :subasta
   resources :pujas
   resources :rentals
-  resources :buysells
   resources :users
   resources :coches
 

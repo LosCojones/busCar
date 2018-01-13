@@ -10,21 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180112200817) do
-
-  create_table "buysells", force: :cascade do |t|
-    t.integer "coche_id"
-    t.integer "comprador_id"
-    t.integer "vendedor_id"
-    t.date "fecha_publicacion"
-    t.date "fecha_compra"
-    t.float "precio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["coche_id"], name: "index_buysells_on_coche_id"
-    t.index ["comprador_id"], name: "index_buysells_on_comprador_id"
-    t.index ["vendedor_id"], name: "index_buysells_on_vendedor_id"
-  end
+ActiveRecord::Schema.define(version: 20180113142306) do
 
   create_table "coches", force: :cascade do |t|
     t.string "marca"
@@ -62,6 +48,20 @@ ActiveRecord::Schema.define(version: 20180112200817) do
     t.index ["alquilado_id"], name: "index_rentals_on_alquilado_id"
     t.index ["alquilador_id"], name: "index_rentals_on_alquilador_id"
     t.index ["coche_id"], name: "index_rentals_on_coche_id"
+  end
+
+  create_table "sells", force: :cascade do |t|
+    t.integer "coche_id"
+    t.integer "comprador_id"
+    t.integer "vendedor_id"
+    t.date "fecha_publicacion"
+    t.date "fecha_compra"
+    t.float "precio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coche_id"], name: "index_sells_on_coche_id"
+    t.index ["comprador_id"], name: "index_sells_on_comprador_id"
+    t.index ["vendedor_id"], name: "index_sells_on_vendedor_id"
   end
 
   create_table "subasta", force: :cascade do |t|

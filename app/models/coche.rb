@@ -1,5 +1,7 @@
 class Coche < ApplicationRecord
-  has_one :compra_ventum
+  has_one :sell
   has_many :rentals
-  has_one :subastum
+  has_one :subasta
+
+  validates :marca, :modelo, :fecha_matriculacion, :combustible, :kms, presence: true
 end
