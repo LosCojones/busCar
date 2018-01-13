@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'venta/index'
+
+  get 'subasta_vehiculo/index'
+
+  get 'subastaa_vehiculo/index'
+
+  get 'alquila_vehiculo/index'
+
   resources :sells
   get 'inicio/index'
 

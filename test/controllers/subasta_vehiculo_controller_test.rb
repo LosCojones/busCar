@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class SubastaVehiculoControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should get index" do
+    get subasta_vehiculo_index_url
+    assert_response :success
+  end
+
 end

@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class VentaControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should get index" do
+    get venta_index_url
+    assert_response :success
+  end
+
 end

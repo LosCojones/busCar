@@ -1,37 +1,98 @@
-<p id="notice"><%= notice %></p>
+<div class="fondo">
+  <nav class="navbar navbar-default" style="width:65%; margin: 0 auto;">
+    <div class="container-fluid text-center">
+      <ul>
+        <div class="btn-group btn-group-lg">
+          <button type="button" class="btn btn-secondary" checked autocomplete="off" onclick="deslizar('cochesCompra.JSON')"><span class="glyphicon glyphicon-option-vertical"></span></button>
+          <%= link_to "Comprar", {controller: 'sells', action: 'index'}, class: "btn btn-secondary" %>
+          <%= link_to "Vender", {controller: 'venta', action: 'index'}, class: "btn btn-secondary" %>
+          <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Alquilar <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#"><%= link_to "Alquilar un vehiculo", {controller: 'rentals', action: 'index'}%></a></li>
+              <li><a href="#"><%= link_to "Alquila tu vehiculo", {controller: 'alquila_vehiculo', action: 'index'}%></a></li>
+            </ul>
+          </div>
+          <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Subastar <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#subastarUno" ><%= link_to "Subastas disponibles", {controller: 'subasta', action: 'index'}%></a></li>
+              <li><a href="#subastarUno" ><%= link_to "Subasta tu vehiculo", {controller: 'subasta_vehiculo', action: 'index'}%></a></li>
+            </ul>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </nav>
 
-<h1>Sells</h1>
+  <div id="comprar" class="tab-pane fade in active">
+    <form class="bootstrap-form" style="margin:10px auto">
+      <div class="row">
+        <div class="col-xs-3" id="marca">
+          <div class="form-group">
+            <label class="control-label" for="primary">Marca</label>
+            <select class="form-control" name="primary" id="primary">
+              <option>Ninguna</option>
+              <option value="renault">Renault</option>
+              <option value="skoda">Skoda</option>
+              <option value="dacia">Dacia</option>
+              <option value="volkswagen">Volkswagen</option>
+              <option value="toyota">Toyota</option>
+            </select>
+          </div>
+          <div class="col-md-4 col-md-offset-10"></div>
+        </div>
+        <div class="col-xs-3" id="modelo">
+          <div class="form-group">
+            <label class="control-label" for="secondary">Modelo</label>
+            <select class="form-control" name="secondary" id="secondary">
+            </select>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="form-group">
+            <div class="row">
+              <label class="control-label" for="optradio">Tipo de cambio</label>
+            </div>
+            <label class="radio-inline"><input type="radio" name="optradio" id="optradio">Automático</label>
+            <label class="radio-inline"><input type="radio" name="optradio" id="optradio1">Manual</label>
+          </div>
+          <div class="form-group ">
+            <div class="row">
+              <label class="control-label" for="optradio2">Combustible</label>
+            </div>
+            <label class="radio-inline"><input type="radio" name="optradio2" id="optradio2" >Gasolina</label>
+            <label class="radio-inline"><input type="radio" name="optradio2" id="optradio3">Diésel</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3" id="años">
+          <div class="form-group">
+            <label class="control-label" for="año1">Año</label>
+            <input class="form-control" type="number" id="año1" placeholder="Desde" min="1960" max="2017">
+            <input class="form-control" type="number" id="año2" placeholder="Hasta" min="" max="2017">
+          </div>
+        </div>
+        <div class="col-xs-3" id="kms">
+          <div class="form-group">
+            <label class="control-label" for="km1">Kilometraje</label>
+            <input class="form-control" type="number" id="km1" placeholder="Desde" min="0" max="1000000">
+            <input class="form-control" type="number" id="km2" placeholder="Hasta" min="" max="1000000">
+          </div>
+        </div>
+        <div class="col-xs-3" id="precios">
+          <div class="form-group">
+            <label class="control-label" for="precio1">Precio</label>
+            <input class="form-control" type="number" id="precio1" placeholder="Desde" min="1" max="1000000">
+            <input class="form-control" type="number" id="precio2" placeholder="Hasta" min="" max="1000000">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary center-block" type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Coche</th>
-      <th>Comprador</th>
-      <th>Vendedor</th>
-      <th>Fecha publicacion</th>
-      <th>Fecha compra</th>
-      <th>Precio</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sells.each do |sell| %>
-      <tr>
-        <td><%= sell.coche %></td>
-        <td><%= sell.comprador %></td>
-        <td><%= sell.vendedor %></td>
-        <td><%= sell.fecha_publicacion %></td>
-        <td><%= sell.fecha_compra %></td>
-        <td><%= sell.precio %></td>
-        <td><%= link_to 'Show', sell %></td>
-        <td><%= link_to 'Edit', edit_sell_path(sell) %></td>
-        <td><%= link_to 'Destroy', sell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Sell', new_sell_path %>
