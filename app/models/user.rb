@@ -1,5 +1,9 @@
 class User < ApplicationRecord
-  has_many :compra_ventums
+  has_many :sells
+  has_many :subasta
   has_many :rentals
-  has_many :subastums
+
+
+  validates :nombre, :dni, :nombre_usuario, :password, :email, presence: true
+  validates :nombre_usuario, :email, uniqueness: true
 end

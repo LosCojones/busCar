@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Coche:</strong>
+  <%= @sell.coche %>
+</p>
+
+<p>
+  <strong>Comprador:</strong>
+  <%= @sell.comprador %>
+</p>
+
+<p>
+  <strong>Vendedor:</strong>
+  <%= @sell.vendedor %>
+</p>
+
+<p>
+  <strong>Fecha publicacion:</strong>
+  <%= @sell.fecha_publicacion %>
+</p>
+
+<p>
+  <strong>Fecha compra:</strong>
+  <%= @sell.fecha_compra %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @sell.precio %>
+</p>
+
+<%= link_to 'Edit', edit_sell_path(@sell) %> |
+<%= link_to 'Back', sells_path %>
