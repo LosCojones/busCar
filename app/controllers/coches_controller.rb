@@ -42,7 +42,7 @@ class CochesController < ApplicationController
   def update
     respond_to do |format|
       if @coch.update(coch_params)
-        format.html { redirect_to @coch, notice: 'Coche was successfully updated.' }
+        format.html { redirect_to @inicio, notice: 'Coche was successfully updated.' }
         format.json { render :show, status: :ok, location: @coch }
       else
         format.html { render :edit }

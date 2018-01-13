@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/new'
+
   get 'venta/index'
 
   get 'subasta_vehiculo/index'

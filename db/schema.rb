@@ -12,20 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180113142306) do
 
-  create_table "buysells", force: :cascade do |t|
-    t.integer "coche_id"
-    t.integer "comprador_id"
-    t.integer "vendedor_id"
-    t.date "fecha_publicacion"
-    t.date "fecha_compra"
-    t.float "precio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["coche_id"], name: "index_buysells_on_coche_id"
-    t.index ["comprador_id"], name: "index_buysells_on_comprador_id"
-    t.index ["vendedor_id"], name: "index_buysells_on_vendedor_id"
-  end
-
   create_table "coches", force: :cascade do |t|
     t.string "marca"
     t.string "modelo"
