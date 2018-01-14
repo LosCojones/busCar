@@ -5,6 +5,12 @@ class SubastaController < ApplicationController
   # GET /subasta.json
   def index
     @subastas = Subastum.all
+    @coches = []
+    i=0;
+    @subastas.each do |subasta|
+      @coches[i] = Coche.find(subasta.coche_id)
+      i+=1
+    end
   end
 
   # GET /subasta/1

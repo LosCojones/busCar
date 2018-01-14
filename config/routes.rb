@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'unasubasta/index'
+
   get 'faqs/faqs'
 
   get 'sessions/new'
@@ -27,7 +29,8 @@ Rails.application.routes.draw do
 
   get "login" => "sessions#new", as: "login"
   get "logout" => "sessions#destroy", as: "logout"
-  get 'inicio/:action', to: 'inicio#index'
+  get 'inicio/index/:id', to: 'inicio#index'
+  get 'subasta/index/:id', to: 'inicio#index'
 
   root "inicio#index"
 end

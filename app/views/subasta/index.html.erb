@@ -1,42 +1,4 @@
 
-<p id="notice"><%= notice %></p>
-
-<h1>Subastas</h1>
-
-<table>
-  <thead>
-  <tr>
-    <th>Coche</th>
-    <th>Comprador</th>
-    <th>Vendedor</th>
-    <th>Fecha publicacion</th>
-    <th>Fecha compra</th>
-    <th>Precio</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @subastas.each do |sell| %>
-    <tr>
-      <td><%= sell.coche_id %></td>
-      <td><%= sell.comprador_id %></td>
-      <td><%= sell.vendedor_id %></td>
-      <td><%= sell.fecha_publicacion %></td>
-      <td><%= sell.fecha_limite %></td>
-      <td><%= sell.fecha_compra %></td>
-      <td><%= sell.valor_compra %></td>
-      <td><%= link_to 'Show', sell %></td>
-      <td><%= link_to 'Edit', edit_subastum_path(sell) %></td>
-      <td><%= link_to 'Destroy', sell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<br>
-
-
 <div class="separador"></div>
 <div class="fondo">
   <nav class="navbar navbar-default" style="width:50%; margin: 0 auto;">
@@ -63,74 +25,76 @@
         </div>
       </ul>
       <!-- COMPRAR UN VEHICULO-->
-      <div id="comprar" class="tab-pane fade in active">
-        <form class="bootstrap-form" style="margin:10px auto">
-          <div class="row">
-            <div class="col-xs-3" id="marca">
-              <div class="form-group">
-                <label class="control-label" for="primary">Marca</label>
-                <select class="form-control" name="primary" id="primary">
-                  <option>Ninguna</option>
-                  <option value="renault">Renault</option>
-                  <option value="skoda">Skoda</option>
-                  <option value="dacia">Dacia</option>
-                  <option value="volkswagen">Volkswagen</option>
-                  <option value="toyota">Toyota</option>
-                </select>
-              </div>
-              <div class="col-md-4 col-md-offset-10"></div>
-            </div>
-            <div class="col-xs-3" id="modelo">
-              <div class="form-group">
-                <label class="control-label" for="secondary">Modelo</label>
-                <select class="form-control" name="secondary" id="secondary">
-                </select>
-              </div>
-            </div>
-            <div class="col-xs-3">
-              <div class="form-group">
-                <div class="row">
-                  <label class="control-label" for="optradio">Tipo de cambio</label>
+      <div id="comprar" class="tab-pane fade in active text-center">
+        <div style="width:895px; margin:0 auto ">
+          <form class="bootstrap-form" style="margin:10px auto">
+            <div class="row" style="margin-left:12%">
+              <div class="col-xs-3" id="marca">
+                <div class="form-group">
+                  <label class="control-label" for="primary">Marca</label>
+                  <select class="form-control" name="primary" id="primary">
+                    <option>Ninguna</option>
+                    <option value="renault">Renault</option>
+                    <option value="skoda">Skoda</option>
+                    <option value="dacia">Dacia</option>
+                    <option value="volkswagen">Volkswagen</option>
+                    <option value="toyota">Toyota</option>
+                  </select>
                 </div>
-                <label class="radio-inline"><input type="radio" name="optradio" id="optradio">Automático</label>
-                <label class="radio-inline"><input type="radio" name="optradio" id="optradio1">Manual</label>
+                <div class="col-md-4 col-md-offset-10"></div>
               </div>
-              <div class="form-group ">
-                <div class="row">
-                  <label class="control-label" for="optradio2">Combustible</label>
+              <div class="col-xs-3" id="modelo">
+                <div class="form-group">
+                  <label class="control-label" for="secondary">Modelo</label>
+                  <select class="form-control" name="secondary" id="secondary">
+                  </select>
                 </div>
-                <label class="radio-inline"><input type="radio" name="optradio2" id="optradio2" >Gasolina</label>
-                <label class="radio-inline"><input type="radio" name="optradio2" id="optradio3">Diésel</label>
+              </div>
+              <div class="col-xs-3">
+                <div class="form-group">
+                  <div class="row">
+                    <label class="control-label" for="optradio">Tipo de cambio</label>
+                  </div>
+                  <label class="radio-inline"><input type="radio" name="optradio" id="optradio">Automático</label>
+                  <label class="radio-inline"><input type="radio" name="optradio" id="optradio1">Manual</label>
+                </div>
+                <div class="form-group ">
+                  <div class="row">
+                    <label class="control-label" for="optradio2">Combustible</label>
+                  </div>
+                  <label class="radio-inline"><input type="radio" name="optradio2" id="optradio2" >Gasolina</label>
+                  <label class="radio-inline"><input type="radio" name="optradio2" id="optradio3">Diésel</label>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-3" id="años">
-              <div class="form-group">
-                <label class="control-label" for="año1">Año</label>
-                <input class="form-control" type="number" id="año1" placeholder="Desde" min="1960" max="2017">
-                <input class="form-control" type="number" id="año2" placeholder="Hasta" min="" max="2017">
+            <div class="row" style="margin-left:12%;">
+              <div class="col-xs-3" id="años">
+                <div class="form-group">
+                  <label class="control-label" for="año1">Año</label>
+                  <input class="form-control" type="number" id="año1" placeholder="Desde" min="1960" max="2017">
+                  <input class="form-control" type="number" id="año2" placeholder="Hasta" min="" max="2017">
+                </div>
+              </div>
+              <div class="col-xs-3" id="kms">
+                <div class="form-group">
+                  <label class="control-label" for="km1">Kilometraje</label>
+                  <input class="form-control" type="number" id="km1" placeholder="Desde" min="0" max="1000000">
+                  <input class="form-control" type="number" id="km2" placeholder="Hasta" min="" max="1000000">
+                </div>
+              </div>
+              <div class="col-xs-3" id="precios">
+                <div class="form-group">
+                  <label class="control-label" for="precio1">Precio</label>
+                  <input class="form-control" type="number" id="precio1" placeholder="Desde" min="1" max="1000000">
+                  <input class="form-control" type="number" id="precio2" placeholder="Hasta" min="" max="1000000">
+                </div>
               </div>
             </div>
-            <div class="col-xs-3" id="kms">
-              <div class="form-group">
-                <label class="control-label" for="km1">Kilometraje</label>
-                <input class="form-control" type="number" id="km1" placeholder="Desde" min="0" max="1000000">
-                <input class="form-control" type="number" id="km2" placeholder="Hasta" min="" max="1000000">
-              </div>
+            <div class="form-group">
+              <button class="btn btn-primary center-block" type="submit">Enviar</button>
             </div>
-            <div class="col-xs-3" id="precios">
-              <div class="form-group">
-                <label class="control-label" for="precio1">Precio</label>
-                <input class="form-control" type="number" id="precio1" placeholder="Desde" min="1" max="1000000">
-                <input class="form-control" type="number" id="precio2" placeholder="Hasta" min="" max="1000000">
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary center-block" type="submit">Enviar</button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </nav>
@@ -152,29 +116,28 @@
       <div class="row">
         <%
           i = 0
-          if !@subastinas.nil?
-            @coches.each do |coche|
-
-        %>
+          @coches.each do |coche|
+            nombre = coche.marca + " - " + coche.modelo
+%>
           <div class="col-sm-3">
             <div class="coches" onclick="">
               <div class="panel panel-secondary">
                 <div class="panel-heading">
-                  <a href="#"><div class="panel-title"><%= coche.marca %> - <%= coche.modelo %></div></a>
+                  <%= link_to nombre , {controller: 'unasubasta', action: 'index', id:  coche.id}%>
                 </div>
                 <div class="panel-body">
-                  <a href="#"><img src="img/bmw serie 3.jpg" alt="foto coche" width="220px" height="140px"></a>
                   <p>Combustible: <a href="#"><%= coche.combustible %></a></p>
                   <p>Kilometros: <a href="#"><%= coche.kms %></a></p>
-                  <p>Precio: <%= @subastinas[i].valor_compra %></p>
-                  <p>Fecha limite: <a href="#"><%= @subastinas[i].fecha_limite %></a></p>
+                  <p>Precio: <%= @subastas[i].valor_compra %></p>
+                  <p>Fecha limite: <a href="#"><%= @subastas[i].fecha_limite %></a></p>
+                  <p>Compra ya: <%= @subastas[i].valor_compra %>
+                      </p>
                 </div>
               </div>
             </div>
           </div>
         <%
           i += 1
-          end
           end %>
       </div>
     </div>

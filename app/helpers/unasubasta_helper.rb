@@ -1,0 +1,2 @@
+module UnasubastaHelper
+end

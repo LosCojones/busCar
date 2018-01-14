@@ -1,0 +1,27 @@
+<div class="col-xs-7">
+  <div class="panel panel-info" style="width:40%; margin:auto; margin-top:15px; ">
+    <div class="panel-heading">
+      <h2 class="panel-title">Histórico de pujas</h2>
+    </div>
+
+
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Puja</th>
+        <th>Fecha y hora de la puja con ID de usuario</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @pujas.each do |puja| %>
+        <tr>
+          <td><%= puja.valor %></td>
+          <td><%= puja.fecha_puja %> - User nº: <%= puja.user_id %></td>
+          <td></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
