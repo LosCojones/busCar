@@ -16,6 +16,7 @@
 
 
 
-  venta1 = Sell.create(coche: 1, comprador: 1, vendedor: 2, fecha_publicacion: Time.now.strftime("%d-%m-%Y"), precio: 12000)
-    venta1 = Sell.create(coche: audi, comprador: nil, vendedor: usuario1, fecha_publicacion: Time.now.strftime("%d-%m-%Y"))
+  venta1 = Sell.create(coche: bmw, comprador: nil, vendedor: usuario2, fecha_publicacion: Time.now.strftime("%d-%m-%Y"), precio: 12000)
+    venta2 = Sell.create(coche: audi, comprador: nil, vendedor: usuario1, fecha_publicacion: Time.now.strftime("%d-%m-%Y"), precio: 124000)
     venta1.update(comprador: usuario2)
+  #subasta1 = Subastum.create(coche:)

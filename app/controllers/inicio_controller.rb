@@ -1,5 +1,6 @@
 class InicioController < ApplicationController
   def index
-    @coches = Coche.all
+    @coches = Sell.all
+
   end
 end
