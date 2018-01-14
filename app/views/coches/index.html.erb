@@ -1,11 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Coches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Fecha matriculacion</th>
+      <th>Combustible</th>
+      <th>Kms</th>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coches.each do |coch| %>
+      <tr>
+        <td><%= coch.marca %></td>
+        <td><%= coch.modelo %></td>
+        <td><%= coch.fecha_matriculacion %></td>
+        <td><%= coch.combustible %></td>
+        <td><%= coch.kms %></td>
+        <td><%= coch.descripcion %></td>
+        <td><%= link_to 'Show', coch %></td>
+        <td><%= link_to 'Edit', edit_coch_path(coch) %></td>
+        <td><%= link_to 'Destroy', coch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+
 <div class="separador"></div>
 <div class="fondo">
-  <nav class="navbar navbar-default" style="width:65%; margin: 0 auto;">
+  <nav class="navbar navbar-default" style="width:50%; margin: 0 auto;">
     <div class="container-fluid text-center">
       <ul>
         <div class="btn-group btn-group-lg">
           <button type="button" class="btn btn-secondary" checked autocomplete="off" onclick="deslizar('cochesCompra.JSON')"><span class="glyphicon glyphicon-option-vertical"></span></button>
-          <%= link_to "Comprar", {controller: 'sells', action: 'index'}, class: "btn btn-secondary" %>
+          <%= link_to "Comprar", {controller: 'inicio', action: 'index'}, class: "btn btn-secondary" %>
           <%= link_to "Vender", {controller: 'coches', action: 'index'}, class: "btn btn-secondary" %>
           <div class="btn-group btn-group-lg">
             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Alquilar <span class="caret"></span></button>
@@ -24,7 +63,7 @@
         </div>
       </ul>
       <!-- COMPRAR UN VEHICULO-->
-      <%= link_to 'Nuevo Coche', new_coch_path %>
+      <%= render "coches/form" %>
     </div>
   </nav>
 </div>

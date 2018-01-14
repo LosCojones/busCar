@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  get 'sessions/create'
+
+  get 'faqs/faqs'
 
   get 'sessions/new'
 
   get 'venta/index'
 
   get 'subasta_vehiculo/index'
-
-  get 'subastaa_vehiculo/index'
 
   get 'alquila_vehiculo/index'
 
@@ -22,6 +21,10 @@ Rails.application.routes.draw do
   resources :venta
   resources :alquila_vehiculo
   resources :subasta_vehiculo
+  resources :sessions
+
+  get "login" => "sessions#new", as: "login"
+  get "logout" => "sessions#destroy", as: "logout"
 
   root "inicio#index"
 end

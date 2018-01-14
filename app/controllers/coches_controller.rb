@@ -24,16 +24,21 @@ class CochesController < ApplicationController
   # POST /coches
   # POST /coches.json
   def create
-    @coch = Coche.new(coch_params)
+    if logged_in?
+      @coch = Coche.new(coch_params)
 
-    respond_to do |format|
-      if @coch.save
-        format.html { redirect_to @coch, notice: 'Coche was successfully created.' }
-        format.json { render :show, status: :created, location: @coch }
-      else
-        format.html { render :new }
-        format.json { render json: @coch.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @coch.save
+          format.html { redirect_to root_path, notice: 'Coche was successfully created.' }
+          format.json { render :show, status: :created, location: @coch }
+          Sell.new(coche: @coch, vendedor: current_user ,fecha_publicacion: Time.now.strftime("%d-%m-%Y") , fecha_compra: nil, precio: '123123')
+        else
+          format.html { render :new }
+          format.json { render json: @coch.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to login_path
     end
   end
 
@@ -42,7 +47,7 @@ class CochesController < ApplicationController
   def update
     respond_to do |format|
       if @coch.update(coch_params)
-        format.html { redirect_to @inicio, notice: 'Coche was successfully updated.' }
+        format.html { redirect_to @coch, notice: 'Coche was successfully updated.' }
         format.json { render :show, status: :ok, location: @coch }
       else
         format.html { render :edit }
@@ -56,7 +61,7 @@ class CochesController < ApplicationController
   def destroy
     @coch.destroy
     respond_to do |format|
-      format.html { redirect_to coches_url, notice: 'Coche was successfully destroyed.' }
+      format.html { redirect_to @coches, notice: 'Coche was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +74,6 @@ class CochesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coch_params
-      params.require(:coche).permit(:marca, :modelo, :fecha_matriculacion, :combustible, :kms, :descripcion)
+      params.permit(:marca, :modelo, :fecha_matriculacion, :combustible, :kms, :descripcion)
     end
 end

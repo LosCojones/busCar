@@ -1,11 +1,11 @@
 <div class="separador"></div>
 <div class="fondo">
-  <nav class="navbar navbar-default" style="width:65%; margin: 0 auto;">
+  <nav class="navbar navbar-default" style="width:50%; margin: 0 auto;">
     <div class="container-fluid text-center">
       <ul>
         <div class="btn-group btn-group-lg">
           <button type="button" class="btn btn-secondary" checked autocomplete="off" onclick="deslizar('cochesCompra.JSON')"><span class="glyphicon glyphicon-option-vertical"></span></button>
-          <%= link_to "Comprar", {controller: 'sells', action: 'index'}, class: "btn btn-secondary" %>
+          <%= link_to "Comprar", {controller: 'inicio', action: 'index'}, class: "btn btn-secondary" %>
           <%= link_to "Vender", {controller: 'coches', action: 'index'}, class: "btn btn-secondary" %>
           <div class="btn-group btn-group-lg">
             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Alquilar <span class="caret"></span></button>

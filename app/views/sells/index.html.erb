@@ -1,3 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ventas</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Coche</th>
+    <th>Comprador</th>
+    <th>Vendedor</th>
+    <th>Fecha publicacion</th>
+    <th>Fecha compra</th>
+    <th>Precio</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @sells.each do |sell| %>
+    <tr>
+      <td><%= sell.coche.modelo %></td>
+      <td><%= sell.comprador %></td>
+      <td><%= sell.vendedor %></td>
+      <td><%= sell.fecha_publicacion %></td>
+      <td><%= sell.fecha_compra %></td>
+      <td><%= sell.precio %></td>
+      <td><%= link_to 'Show', sell %></td>
+      <td><%= link_to 'Edit', edit_sell_path(sell) %></td>
+      <td><%= link_to 'Destroy', sell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% @sells.first %>
+
 <div class="separador"></div>
 <div class="fondo">
   <nav class="navbar navbar-default" style="width:65%; margin: 0 auto;">
@@ -96,6 +134,9 @@
     </div>
   </nav>
 </div>
+
+
+
 <div class="separador"></div>
 
 <div class="news panel panel-default " style="background-color: #FFFCF4; width:90%; margin:0 auto">

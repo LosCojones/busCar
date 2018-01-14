@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice: "logged in successfully"
     else
       flash.now[:alert] = "contraseña/usuario no válido"
-      render :new
+      redirect_to login_path
     end
   end
 

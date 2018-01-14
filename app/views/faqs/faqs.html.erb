@@ -1,0 +1,76 @@
+<div class="separador"></div>
+<div class="fondo">
+  <nav class="navbar navbar-default" style="width:50%; margin: 0 auto;">
+    <div class="container-fluid text-center">
+      <ul>
+        <div class="btn-group btn-group-lg">
+          <button type="button" class="btn btn-secondary" checked autocomplete="off" onclick="deslizar('cochesCompra.JSON')"><span class="glyphicon glyphicon-option-vertical"></span></button>
+          <%= link_to "Comprar", {controller: 'inicio', action: 'index'}, class: "btn btn-secondary" %>
+          <%= link_to "Vender", {controller: 'coches', action: 'index'}, class: "btn btn-secondary" %>
+          <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Alquilar <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#"><%= link_to "Alquilar un vehiculo", {controller: 'rentals', action: 'index'}%></a></li>
+              <li><a href="#"><%= link_to "Alquila tu vehiculo", {controller: 'alquila_vehiculo', action: 'index'}%></a></li>
+            </ul>
+          </div>
+          <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Subastar <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" ><%= link_to "Subastas disponibles", {controller: 'subasta', action: 'index'}%></a></li>
+              <li><a href="#" ><%= link_to "Subasta tu vehiculo", {controller: 'subasta_vehiculo', action: 'index'}%></a></li>
+            </ul>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="separador"></div>
+
+<div class="container-fluid" style="width:80%; margin: 20px auto">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h1 class="panel-title faqs">FAQs</h1>
+    </div>
+    <div class="panel-body">
+      <div class="media" style="width:80%; margin: 10px auto">
+        <div class="media-body">
+          <h4>¿Cuántos ponis es un caballo (CV)?</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisl ac diam
+            feugiat, non vestibulum libero posuere. Vivamus pharetra leo non nulla egestas, nec
+            malesuada orci finibus. </p>
+
+        </div>
+      </div>
+      <div style="border: 0.5px black solid; margin-top:15px"></div>
+      <div class="media" style="width:80%; margin: 10px auto">
+        <div class="media-body">
+          <h4>¿Es esto una pregunta?</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisl ac diam
+            feugiat, non vestibulum libero posuere. Vivamus pharetra leo non nulla egestas, nec
+            malesuada orci finibus. </p>
+
+        </div>
+      </div>
+      <div style="border: 0.5px black solid; margin-top:15px"></div>
+      <div class="media" style="width:80%; margin: 10px auto">
+        <div class="media-body">
+          <h4>¿Pregunta 3?</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisl ac diam
+            feugiat, non vestibulum libero posuere. Vivamus pharetra leo non nulla egestas, nec
+            malesuada orci finibus. </p>
+        </div>
+      </div>
+      <div style="border: 0.5px black solid; margin-top:15px"></div>
+      <div class="media" style="width:80%; margin: 10px auto">
+        <div class="media-body">
+          <h4>¿Merece la pena?</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisl ac diam
+            feugiat, non vestibulum libero posuere. Vivamus pharetra leo non nulla egestas, nec
+            malesuada orci finibus. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
