@@ -5,7 +5,7 @@ class Sell < ApplicationRecord
 
   validates :comprador, presence: false
 
-
+  scope :disponibles, -> {where(comprador: nil)}
 
   def create(coche, comprador, vendedor, fecha_publicacion, fecha_compra, precio)
     @venta = Sell.new

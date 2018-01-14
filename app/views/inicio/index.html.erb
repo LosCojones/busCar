@@ -34,32 +34,34 @@
       <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="glyphicon glyphicon-sort-by-attributes"></span>  Ordenar por  </button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Fecha de publicación</a></li>
-        <li><a class="dropdown-item" href="#">Precio</a></li>
-        <li><a class="dropdown-item" href="#">Kilometraje</a></li>
+        <li><%= link_to "Fecha de publicacion", controller: 'inicio', action: 'index'%></li>
+        <li><%= link_to "Precio", controller: 'inicio', action: 'index' %></li>
+        <li><%= link_to "Kilometraje", controller: 'inicio', action: 'index' %></li>
       </ul>
     </div>
     <div class="latestNews">
       <div class="row">
         <%
+          i = 0
           @coches.each do |coche|
         %>
           <div class="col-sm-3">
             <div class="coches" onclick="">
               <div class="panel panel-secondary">
                 <div class="panel-heading">
-                  <%= Sell.find(coche).precio %>
                   <a href="#"><div class="panel-title"><%= coche.marca %> - <%= coche.modelo %></div></a>
                 </div>
                 <div class="panel-body">
                   <a href="#"><img src="img/bmw serie 3.jpg" alt="foto coche" width="220px" height="140px"></a>
-                  <p>Combustible: <a href="paginaUsuario.html"><%= coche.combustible %></a></p>
-                  <p>Precio: <%= coche.kms%></p>
+                  <p>Combustible: <a href="#"><%= coche.combustible %></a></p>
+                  <p>Precio: <%= @ventas[i] %></p>
                 </div>
               </div>
             </div>
           </div>
-      <% end %>
+      <%
+        i += 1
+        end %>
       </div>
     </div>
           </div>

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   get 'venta/index'
 
-  get 'subasta_vehiculo/index'
+  post 'subasta_vehiculo/create'
+
+  #get 'subasta_vehiculo/index'
 
   get 'alquila_vehiculo/index'
 
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
 
   get "login" => "sessions#new", as: "login"
   get "logout" => "sessions#destroy", as: "logout"
+  get 'inicio/:action', to: 'inicio#index'
 
   root "inicio#index"
 end

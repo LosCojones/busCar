@@ -1,0 +1,48 @@
+<%= form_tag({controller: 'subasta_vehiculo', action: 'create'}, method: 'post', id: 'form') do %>
+
+  <div class="field form-group">
+    <label for="inputText">Marca</label>
+    <%= text_field_tag :marca %>
+  </div>
+
+  <div class="field form-group">
+    <label for="inputText">Modelo</label>
+    <%= text_field_tag :modelo %>
+  </div>
+
+  <div class="field form-group">
+    <label for="inputText">Fecha matriculación</label>
+    <%= date_field_tag :fecha_matriculacion %>
+  </div>
+
+  <div class="field form-group">
+    <label for="inputText">Fecha limite</label>
+    <%= date_field_tag :fecha_limite %>
+  </div>
+
+  <div class="field form-group">
+    <label for="inputText">Combustible</label>
+    <%= text_field_tag :combustible %>
+  </div>
+
+  <div class="field form-group">
+    <label for="inputText">Kms</label>
+    <%= number_field_tag :kms %>
+  </div>
+
+  <div class="field form-group">
+    <label for="inputText">Descripción</label>
+    <%= text_area_tag :descripcion %>
+  </div>
+
+  <div class="field form-group">
+    <label for="inputText">Valor compra</label>
+    <%= number_field_tag :valor_compra %>
+  </div>
+
+  <div class="actions btn">
+    <%= submit_tag 'Anunciar'%>
+  </div>
+<% end %>
+
+

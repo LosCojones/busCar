@@ -20,19 +20,24 @@
     <%= form.text_field :combustible, id: :coch_combustible %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :kms %>
     <%= form.number_field :kms, id: :coch_kms %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
+    <%= form.label :precio %>
+    <%= form.number_field :precio, id: :coch_precio %>
+  </div>
+
+  <div class="field form-group">
     <%= form.label :descripcion %>
     <%= form.text_area :descripcion, id: :coch_descripcion %>
   </div>
 
 
 
-  <div class="actions">
+  <div class="actions btn">
     <%= form.submit %>
   </div>
 

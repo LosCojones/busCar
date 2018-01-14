@@ -13,10 +13,13 @@
    audi = Coche.create(marca:'Audi', modelo: 'TT', fecha_matriculacion: Time.now.strftime("%d-%m-%Y"), combustible: 'diesel', kms: '12000'	)
    bmw = Coche.create(marca:'BMW', modelo: 'Serie 1', fecha_matriculacion: Time.now.strftime("%d-%m-%Y"), combustible: 'gasolina', kms: '12000'	)
    golf = Coche.create(marca:'Volkswagen', modelo: 'Golf', fecha_matriculacion: Time.now.strftime("%d-%m-%Y"), combustible: 'gasolina', kms: '10000'	)
+    camaro = Coche.create(marca:'Chevrolet', modelo: 'Camaro', fecha_matriculacion: Time.now.strftime("%d-%m-%Y"), combustible: 'gasolina', kms: '10000'	)
 
 
 
   venta1 = Sell.create(coche: bmw, comprador: nil, vendedor: usuario2, fecha_publicacion: Time.now.strftime("%d-%m-%Y"), precio: 12000)
     venta2 = Sell.create(coche: audi, comprador: nil, vendedor: usuario1, fecha_publicacion: Time.now.strftime("%d-%m-%Y"), precio: 124000)
+    venta3 = Sell.create(coche: golf, comprador: nil, vendedor: usuario3, fecha_publicacion: Time.now.strftime("%d-%m-%Y"), precio: 99999)
     venta1.update(comprador: usuario2)
-  #subasta1 = Subastum.create(coche:)
+
+  subasta1 = Subastum.create(coche: camaro, comprador: nil,vendedor: usuario2, fecha_publicacion: Time.now.strftime("%d-%m-%Y"), fecha_limite: Time.now.strftime("%d-%m-%Y"), fecha_compra: nil, valor_compra: 987654, puja: nil)

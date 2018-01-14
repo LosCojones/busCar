@@ -1,2 +1,69 @@
-<h1>SubastaVehiculo#index</h1>
-<p>Find me in app/views/subasta_vehiculo/index.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Subastas</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Coche</th>
+    <th>Comprador</th>
+    <th>Vendedor</th>
+    <th>Fecha publicacion</th>
+    <th>Fecha compra</th>
+    <th>Precio</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @subastas.each do |sell| %>
+    <tr>
+      <td><%= sell.coche_id %></td>
+      <td><%= sell.comprador_id %></td>
+      <td><%= sell.vendedor_id %></td>
+      <td><%= sell.fecha_publicacion %></td>
+      <td><%= sell.fecha_limite %></td>
+      <td><%= sell.fecha_compra %></td>
+      <td><%= sell.valor_compra %></td>
+      <td><%= link_to 'Show', sell %></td>
+      <td><%= link_to 'Edit', edit_subastum_path(sell) %></td>
+      <td><%= link_to 'Destroy', sell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="separador"></div>
+<div class="fondo">
+  <nav class="navbar navbar-default" style="width:50%; margin: 0 auto;">
+    <div class="container-fluid text-center">
+      <ul>
+        <div class="btn-group btn-group-lg">
+          <button type="button" class="btn btn-secondary" checked autocomplete="off" onclick="deslizar('cochesCompra.JSON')"><span class="glyphicon glyphicon-option-vertical"></span></button>
+          <%= link_to "Comprar", {controller: 'inicio', action: 'index'}, class: "btn btn-secondary" %>
+          <%= link_to "Vender", {controller: 'coches', action: 'index'}, class: "btn btn-secondary" %>
+          <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Alquilar <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#"><%= link_to "Alquilar un vehiculo", {controller: 'rentals', action: 'index'}%></a></li>
+              <li><a href="#"><%= link_to "Alquila tu vehiculo", {controller: 'alquila_vehiculo', action: 'index'}%></a></li>
+            </ul>
+          </div>
+          <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Subastar <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" ><%= link_to "Subastas disponibles", {controller: 'subasta', action: 'index'}%></a></li>
+              <li><a href="#" ><%= link_to "Subasta tu vehiculo", {controller: 'subasta_vehiculo', action: 'index'}%></a></li>
+            </ul>
+          </div>
+        </div>
+      </ul>
+      <!-- COMPRAR UN VEHICULO-->
+      <%= render "subasta_vehiculo/form" %>
+    </div>
+  </nav>
+</div>
+<div class="separador"></div>

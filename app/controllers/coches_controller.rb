@@ -31,7 +31,7 @@ class CochesController < ApplicationController
         if @coch.save
           format.html { redirect_to root_path, notice: 'Coche was successfully created.' }
           format.json { render :show, status: :created, location: @coch }
-          @venta = Sell.new(coche: @coch, vendedor: current_user ,fecha_publicacion: Time.now.strftime("%d-%m-%Y") , fecha_compra: nil, precio: '123123')
+          @venta = Sell.new(coche: @coch, vendedor: current_user ,fecha_publicacion: Time.now.strftime("%d-%m-%Y") , fecha_compra: nil, precio: params[:precio])
           @venta.save
         else
           format.html { render :new }

@@ -4,5 +4,5 @@ class Coche < ApplicationRecord
   has_one :subasta
 
   validates :marca, :modelo, :fecha_matriculacion, :combustible, :kms, presence: true
-
+  scope :venta, lambda { joins(:sell).merge(Sell.dsponible) }
 end

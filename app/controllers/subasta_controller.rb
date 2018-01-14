@@ -4,7 +4,7 @@ class SubastaController < ApplicationController
   # GET /subasta
   # GET /subasta.json
   def index
-    @subasta = Subastum.all
+    @subastas = Subastum.all
   end
 
   # GET /subasta/1
