@@ -16,8 +16,8 @@
   <tbody>
     <% @pujas.each do |puja| %>
       <tr>
-        <td><%= puja.user %></td>
-        <td><%= puja.subasta %></td>
+        <td><%= puja.user.id %></td>
+        <td><%= puja.subasta.id %></td>
         <td><%= puja.fecha_puja %></td>
         <td><%= puja.valor %></td>
         <td><%= link_to 'Show', puja %></td>
